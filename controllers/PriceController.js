@@ -1,5 +1,5 @@
 const {Price} = require('../models/models')
-const ApiError = require('../error/ApiError')
+const ApiError = require('../error/apiError')
 
 class PriceController {
     async create(req, res, next) {

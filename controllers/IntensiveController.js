@@ -1,5 +1,5 @@
 const {Intensive} = require('../models/models')
-const ApiError = require('../error/ApiError')
+const ApiError = require('../error/apiError')
 
 class IntensiveController {
     async create(req, res, next) {

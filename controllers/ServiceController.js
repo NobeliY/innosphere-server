@@ -1,5 +1,5 @@
 const {Service} = require('../models/models')
-const ApiError = require('../error/ApiError')
+const ApiError = require('../error/apiError')
 
 class ServiceController {
     async create(req, res, next) {
