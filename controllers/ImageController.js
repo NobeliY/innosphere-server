@@ -36,6 +36,14 @@ class ImageController {
         try {
             const { id } = req.query
             const image = await Image.findOne({where: {id}})
+            const filePath = path.resolve(__dirname, '..', 'static', image.name)
+            fs.unlink(filePath, (e) => {
+                if (e) {
+                    console.log('Ошибка при удалении файла:', e)
+                } else {
+                    console.log('Файл успешно удален')
+                }
+            })
             await image.destroy()
             return res.json(image)
         } catch (e) {
