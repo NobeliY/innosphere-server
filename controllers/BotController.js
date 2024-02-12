@@ -14,7 +14,8 @@ class BotContoller {
             const {name, phone, message} = req.body
             const text = `❗*НОВАЯ ЗАЯВКА*❗\n\nИмя: ${name}\nТелефон: ${phone}\n${message ? 'Сообщение:' : ''} ${message}`
             bot.stopPolling()
-            bot.sendMessage(525881782, text, {parse_mode: "Markdown"})
+            // bot.sendMessage(525881782, text, {parse_mode: "Markdown"})
+            bot.sendMessage(1705508314, text, {parse_mode: "Markdown"})
             bot.startPolling()
             return res.json(text)
         } catch (e) {
