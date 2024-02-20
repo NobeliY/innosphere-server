@@ -6,7 +6,8 @@ const intensiveRouter = require('./IntensiveRouter')
 const imageRouter = require('./ImageRouter')
 const rateRouter = require('./RateRouter')
 const botRouter = require('./BotRouter')
-
+const companyRouter = require('./CompanyRouter')
+const newsRouter = require('./NewsRouter')
 
 router.use('/service', serviceRouter)
 router.use('/price', priceRouter)
@@ -14,5 +15,7 @@ router.use('/intensive', intensiveRouter)
 router.use('/image', imageRouter)
 router.use('/rate', rateRouter)
 router.use('/bot', botRouter)
+router.use('/company', companyRouter)
+router.use('/news', newsRouter)
 
 module.exports = router

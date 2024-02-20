@@ -35,10 +35,30 @@ const Rate = sequelize.define('rates', {
     text: {type: DataTypes.TEXT, allowNull: false}
 })
 
+const News = sequelize.define('news', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    text: {type: DataTypes.TEXT, allowNull: false}
+})
+
+const NewsImages = sequelize.define('news_images', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    text: {type: DataTypes.STRING, allowNull: false}
+})
+
+const Company = sequelize.define('company', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    text: {type: DataTypes.TEXT, allowNull: false}
+})
+
 module.exports = {
     Service,
     Price,
     Intensive,
     Image,
-    Rate
+    Rate,
+    News,
+    NewsImages,
+    Company
 }
