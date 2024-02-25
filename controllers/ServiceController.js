@@ -1,11 +1,11 @@
-const {Service} = require('../models/models')
+const { Service } = require('../models/models')
 const ApiError = require('../error/apiError')
 
 class ServiceController {
     async create(req, res, next) {
         try {
-            const {name, text} = req.body
-            const service = await Service.create({name, text})
+            const { name, text } = req.body
+            const service = await Service.create({ name, text })
             return res.json(service)
         } catch (e) {
             return next(ApiError.badRequest(e.message))
@@ -14,8 +14,8 @@ class ServiceController {
 
     async update(req, res, next) {
         try {
-            const {id, name, text} = req.body
-            const service = await Service.findOne({where: {id}})
+            const { id, name, text } = req.body
+            const service = await Service.findOne({ where: { id } })
             if (name) service.name = name
             if (text) service.text = text
             await service.save()
@@ -36,9 +36,9 @@ class ServiceController {
 
     async delete(req, res, next) {
         try {
-            const {id} = req.query
-            const service = await Service.findOne({where: {id}})
-            await service.destroy()            
+            const { id } = req.query
+            const service = await Service.findOne({ where: { id } })
+            await service.destroy()
             return res.json(service)
         } catch (e) {
             return next(ApiError.badRequest(e.message))

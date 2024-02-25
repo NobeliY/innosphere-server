@@ -8,6 +8,8 @@ const rateRouter = require('./RateRouter')
 const botRouter = require('./BotRouter')
 const companyRouter = require('./CompanyRouter')
 const newsRouter = require('./NewsRouter')
+const teacherRouter = require('./TeacherRouter')
+const documentRouter = require('./DocumentRouter')
 
 router.use('/service', serviceRouter)
 router.use('/price', priceRouter)
@@ -17,5 +19,7 @@ router.use('/rate', rateRouter)
 router.use('/bot', botRouter)
 router.use('/company', companyRouter)
 router.use('/news', newsRouter)
+router.use('/teacher', teacherRouter)
+router.use('/document', documentRouter)
 
 module.exports = router

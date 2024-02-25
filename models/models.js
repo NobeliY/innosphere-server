@@ -37,18 +37,36 @@ const Rate = sequelize.define('rates', {
 
 const News = sequelize.define('news', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    text: {type: DataTypes.TEXT, allowNull: false}
+    text: {type: DataTypes.TEXT, allowNull: false},
 })
 
 const NewsImages = sequelize.define('news_images', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, allowNull: false},
-    text: {type: DataTypes.STRING, allowNull: false}
+    news_code: {type: DataTypes.INTEGER, allowNull: false}
+    // text: {type: DataTypes.STRING, allowNull: false}
 })
 
 const Company = sequelize.define('company', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, allowNull: false},
+    text: {type: DataTypes.TEXT, allowNull: false}
+})
+
+const Teacher = sequelize.define('teachers', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    position: {type: DataTypes.STRING, allowNull: false},
+    education: {type: DataTypes.STRING, allowNull: false},
+    experience: {type: DataTypes.STRING, allowNull: false},
+    description: {type: DataTypes.TEXT, allowNull: false},
+    img: {type: DataTypes.STRING}
+})
+
+const Document = sequelize.define('documents', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    document: {type: DataTypes.STRING, allowNull: false},
     text: {type: DataTypes.TEXT, allowNull: false}
 })
 
@@ -60,5 +78,7 @@ module.exports = {
     Rate,
     News,
     NewsImages,
-    Company
+    Company,
+    Teacher,
+    Document
 }

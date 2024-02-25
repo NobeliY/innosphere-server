@@ -8,7 +8,7 @@ const fs = require('fs')
 class NewsImagesController {
     async create(req, res, next) {
         try {
-            const {text} = req.body
+            const { text } = req.body
             if (req.files && 'img' in req.files) {
                 const { img } = req.files
                 let fileName = uuid.v4() + ".jpg"
@@ -35,7 +35,7 @@ class NewsImagesController {
     async delete(req, res, next) {
         try {
             const { id } = req.query
-            const image = await NewsImagesController.findOne({where: {id}})
+            const image = await NewsImagesController.findOne({ where: { id } })
             const filePath = path.resolve(__dirname, '..', 'static', image.name)
             fs.unlink(filePath, (e) => {
                 if (e) {
