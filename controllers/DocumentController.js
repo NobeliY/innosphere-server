@@ -16,6 +16,7 @@ class ImageController {
                 let fileName = uuid.v4() + '.' + file.mimetype.split('/')[1]
                 file.mv(path.resolve(__dirname, '..', 'static', fileName))
                 const document = await Document.create({ name, document: fileName, text })
+                console.log(document.toJSON())
                 return res.json(document)
             } else {
                 return res.json(text)
