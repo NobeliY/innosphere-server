@@ -19,8 +19,7 @@ log4js.configure({
       },
 });
 
-var logger = log4js.getLogger('default');
-logger.setLevel('DEBUG');
+// var logger = log4js.getLogger('default');
 
 const PORT = process.env.PORT || 5000
 
