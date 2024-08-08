@@ -12,11 +12,14 @@ const fs = require('fs')
 
 const PORT = process.env.PORT || 5000
 
+//const options = {}
 // for linux
+
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/www.server.innosfera-almet.ru/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/www.server.innosfera-almet.ru/cert.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/server.innosfera-almet.ru/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/server.innosfera-almet.ru/cert.pem')
 }
+
 
 const app = express()
 app.use(cors())
