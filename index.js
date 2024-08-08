@@ -11,7 +11,7 @@ const fs = require('fs')
 var log4js = require('log4js');
 log4js.configure({
     appenders: [{type: 'console'},
-                {type: 'file', filename: '/root/innosfera-server/express.log', category: 'dev'}]
+                {type: 'file', filename: 'express.log', category: 'dev'}]
 });
 
 var logger = log4js.getLogger('dev');
